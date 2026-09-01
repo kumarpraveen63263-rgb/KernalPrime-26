@@ -334,14 +334,22 @@
 
   if (navToggle && navMenu) {
     navToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
+      const isActive = navMenu.classList.toggle('active');
+      if (isActive) {
+        document.body.classList.add('nav-open');
+      } else {
+        document.body.classList.remove('nav-open');
+      }
     });
   }
 
-  const navLinks = document.querySelectorAll('.nav-link');
+  const navLinks = document.querySelectorAll('.nav-link, .btn-nav-register');
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
-      if (navMenu) navMenu.classList.remove('active');
+      if (navMenu) {
+        navMenu.classList.remove('active');
+        document.body.classList.remove('nav-open');
+      }
     });
   });
 
