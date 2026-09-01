@@ -408,7 +408,7 @@
   }
 
   /* ── 10. 3D GLASS CARD TILT EFFECT ───────────────────────────── */
-  const tiltCards = document.querySelectorAll('.tilt-card, .glass-card, .glance-card, .problem-glass-card, .roadmap-node-card, .prize-tier-card, .prize-col-card');
+  const tiltCards = document.querySelectorAll('.tilt-card, .glass-card, .glance-card, .problem-glass-card, .roadmap-node-card, .prize-tier-card, .prize-col-card, .venue-standalone-card, .team-member-card');
 
   tiltCards.forEach(card => {
     card.addEventListener('mousemove', (e) => {
@@ -439,7 +439,7 @@
     });
   }, { threshold: 0.12 });
 
-  document.querySelectorAll('.glance-card, .glass-card, .problem-glass-card, .roadmap-node-card, .prize-tier-card, .prize-col-card, .mentor-profile-card, .faq-item').forEach(el => {
+  document.querySelectorAll('.glance-card, .glass-card, .problem-glass-card, .roadmap-node-card, .prize-tier-card, .prize-col-card, .venue-standalone-card, .team-member-card, .mentor-profile-card, .faq-item').forEach(el => {
     scrollObserver.observe(el);
   });
 
