@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kernel Prime '26 | Flagship National 24-Hour Hackathon</title>
+  
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Vector Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="splash-active">
+
+  <!-- ════════════════════════════════════════════════════════════════
+       DYNAMIC PCB CIRCUIT CANVAS & MOUSE LIGHTING
+  ════════════════════════════════════════════════════════════════ -->
+  <canvas id="circuitCanvas"></canvas>
+  <div id="cursorLight"></div>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       PART 1: CINEMATIC SPLASH VIDEO SCREEN
+  ════════════════════════════════════════════════════════════════ -->
+  <div id="splash">
+    <video id="splashVideo" src="flash video/Video Project 4 (1).mp4" autoplay muted playsinline preload="auto"></video>
+    <div id="splashOverlay"></div>
+    <button id="skipSplashBtn" class="skip-splash-btn">Skip Intro &rarr;</button>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       GLASSMORPHISM NAVIGATION BAR (Hidden during splash)
+  ════════════════════════════════════════════════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand">
+        <img src="logo/KernelPrime'26 Funky Logo.png" alt="Kernel Prime '26 Logo" class="nav-logo-img" />
+      </a>
+
+      <div class="nav-menu" id="navMenu">
+        <a href="#hero" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#glance" class="nav-link">Highlights</a>
+        <a href="#problems" class="nav-link">Problems</a>
+        <a href="#roadmap" class="nav-link">Roadmap</a>
+        <a href="#prizes" class="nav-link">Prizes</a>
+        <a href="#mentors" class="nav-link">Mentors</a>
+        <a href="#sponsors" class="nav-link">Sponsors</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="#register" class="btn-nav-register">
+          <span>Register</span>
+          <i data-lucide="sparkles"></i>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation Menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       MAIN SITE CONTENT
+  ════════════════════════════════════════════════════════════════ -->
+  <div id="mainSite">
+
+    <!-- PART 2: HERO SECTION WITH FROZEN VIDEO BACKGROUND -->
+    <section id="hero">
+
+      <!-- Frozen Video Background Slot (Splash video transfers here after playback) -->
+      <div id="heroBg"></div>
+      <div class="hero-overlay"></div>
+
+      <div class="hero-container">
+
+        <!-- 1. COLLEGE BRANDING STACK (TOP OF HERO) -->
+        <div class="college-hero-header" id="collegeHeader">
+          
+          <!-- Official College Logo & Name -->
+          <div class="clg-identity-row">
+            <img src="clg/SAEC LOGO.png" alt="S.A. Engineering College Logo" class="clg-main-logo" />
+            <div class="clg-text-block">
+              <h2 class="clg-name">S.A. ENGINEERING COLLEGE</h2>
+              <p class="clg-subtitle">
+                (Autonomous – Institute Level Research Centre, Affiliated to Anna University, Chennai)
+              </p>
+            </div>
+          </div>
+
+          <!-- Official Accreditation Logos (Elegantly in a single row) -->
+          <div class="clg-accred-row">
+            <div class="accred-badge">
+              <img src="clg/naac.png" alt="NAAC A Grade" />
+              <span>NAAC 'A' Grade</span>
+            </div>
+            <div class="accred-divider"></div>
+            <div class="accred-badge">
+              <img src="clg/28.png" alt="28 Years of Excellence" />
+              <span>28 Years Excellence</span>
+            </div>
+            <div class="accred-divider"></div>
+            <div class="accred-badge">
+              <img src="clg/nba.png" alt="NBA Accredited" />
+              <span>NBA Accredited</span>
+            </div>
+          </div>
+
+          <!-- Official Department Details -->
+          <div class="clg-dept-block">
+            <span class="dept-lead-label">DEPARTMENT OF</span>
+            <p class="dept-title">
+              <span class="highlight-ece">Electronics and Communication Engineering</span>
+              <span class="dept-amp">&amp;</span>
+              <span class="highlight-vlsi">Electronics Engineering (VLSI Design and Technology)</span>
+            </p>
+          </div>
+
+        </div><!-- /college-hero-header -->
+
+        <!-- 2. KERNEL PRIME '26 MAIN EVENT HIERARCHY -->
+        <div class="hero-event-block">
+
+          <!-- 1. Badge -->
+          <div class="event-badge-pill">
+            <span class="live-pulse"></span>
+            <span>24-HOUR NATIONAL HACKATHON</span>
+          </div>
+
+          <!-- 2. OFFICIAL KERNEL PRIME '26 PNG LOGO ASSET (CENTERPIECE) -->
+          <div class="hero-logo-wrapper">
+            <img src="logo/KernelPrime'26 Funky Logo.png" alt="Kernel Prime '26 Official Logo" class="hero-official-logo" />
+          </div>
+
+          <!-- 3. Key Meta Pills: Date & Prize Pool -->
+          <div class="hero-meta-grid">
+            <div class="hero-meta-item">
+              <i data-lucide="calendar"></i>
+              <span>October 8–9, 2026</span>
+            </div>
+            <div class="hero-meta-item prize-badge-gold">
+              <i data-lucide="trophy"></i>
+              <span>₹50,000 Prize Pool</span>
+            </div>
+          </div>
+
+          <!-- 4. Live Flip Countdown Timer -->
+          <div class="countdown-container" id="countdownWrapper">
+            <span class="cd-header-label">HACKATHON STARTS IN</span>
+            <div class="countdown-grid">
+              <div class="cd-unit">
+                <span id="cd-days" class="cd-num">00</span>
+                <span class="cd-label">DAYS</span>
+              </div>
+              <span class="cd-colon">:</span>
+              <div class="cd-unit">
+                <span id="cd-hours" class="cd-num">00</span>
+                <span class="cd-label">HOURS</span>
+              </div>
+              <span class="cd-colon">:</span>
+              <div class="cd-unit">
+                <span id="cd-minutes" class="cd-num">00</span>
+                <span class="cd-label">MINUTES</span>
+              </div>
+              <span class="cd-colon">:</span>
+              <div class="cd-unit">
+                <span id="cd-seconds" class="cd-num">00</span>
+                <span class="cd-label">SECONDS</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Dual Hero Action Buttons -->
+          <div class="hero-cta-row">
+            <a href="#register" class="btn-hero-primary">
+              <span>Register Now</span>
+              <i data-lucide="arrow-right"></i>
+            </a>
+            <a href="#brochureModal" class="btn-hero-secondary" id="brochureBtn">
+              <i data-lucide="file-text"></i>
+              <span>Download Brochure</span>
+            </a>
+          </div>
+
+        </div><!-- /hero-event-block -->
+
+        <div class="hero-scroll-hint">
+          <span>Scroll to Explore</span>
+          <i data-lucide="chevron-down" class="bounce-arrow"></i>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+       CHANGE 1: EVENT AT A GLANCE (EXACT 8 SPECIFIED CARDS)
+  ════════════════════════════════════════════════════════════════ -->
+    <section id="glance" class="section-padding">
+      <div class="container">
+        <div class="section-title-group">
+          <span class="section-eyebrow">KEY HIGHLIGHTS</span>
+          <h2 class="section-main-heading">Event at a Glance</h2>
+          <p class="section-subtext">Everything you need to know about the premier national hackathon.</p>
+        </div>
+
+        <div class="glance-cards-grid">
+
+          <div class="glance-card tilt-card">
+            <div class="glance-icon-box blue"><i data-lucide="clock"></i></div>
+            <div class="glance-value">24 Hours</div>
+            <h3>24-Hour National Hackathon</h3>
+            <p>An intense 24-hour continuous prototyping sprint from problem statement release to final jury presentation.</p>
+          </div>
+
+          <div class="glance-card tilt-card">
+            <div class="glance-icon-box cyan"><i data-lucide="users"></i></div>
+            <div class="glance-value">35 Teams</div>
+            <h3>35 Selected Teams</h3>
+            <p>Curated national selection bringing together 35 top engineering finalist teams to build under one roof.</p>
+          </div>
+
+          <div class="glance-card tilt-card">
+            <div class="glance-icon-box gold"><i data-lucide="user-check"></i></div>
+            <div class="glance-value">Expert Panel</div>
+            <h3>Industry Expert Evaluation</h3>
+            <p>Direct evaluation and scoring by senior VLSI architects, AI leads, and semiconductor industry leaders.</p>
+          </div>
+
+          <div class="glance-card tilt-card">
+            <div class="glance-icon-box purple"><i data-lucide="messages-square"></i></div>
+            <div class="glance-value">Continuous</div>
+            <h3>Mentor Support</h3>
+            <p>Dedicated guidance from experienced lab professors and industry mentors during your 24-hour build.</p>
+          </div>
+
+          <div class="glance-card tilt-card">
+            <div class="glance-icon-box blue"><i data-lucide="award"></i></div>
+            <div class="glance-value">All Attendees</div>
+            <h3>Participation Certificates</h3>
+            <p>Official participation certificates for all registered attendees and prestigious trophies for winners.</p>
+          </div>
+
+          <div class="glance-card tilt-card">
+            <div class="glance-icon-box gold"><i data-lucide="coffee"></i></div>
+            <div class="glance-value">Complimentary</div>
+            <h3>Food &amp; Refreshments</h3>
+            <p>Full meal coverage, snacks, midnight coffee, and resting areas provided free throughout the event.</p>
+          </div>
+
+          <div class="glance-card tilt-card">
+            <div class="glance-icon-box cyan"><i data-lucide="graduation-cap"></i></div>
+            <div class="glance-value">BE / B.Tech</div>
+            <h3>Open to BE &amp; B.Tech Students</h3>
+            <p>Open to undergraduate and postgraduate engineering students across all accredited institutions in India.</p>
+          </div>
+
+          <div class="glance-card tilt-card">
+            <div class="glance-icon-box purple"><i data-lucide="cpu"></i></div>
+            <div class="glance-value">2 Days Prior</div>
+            <h3>Hardware Problem Statements Released</h3>
+            <p>Hardware challenge statements will be officially announced 2 days before the event for fair competition.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+       ABOUT SECTION
+  ════════════════════════════════════════════════════════════════ -->
+    <section id="about" class="section-padding">
+      <div class="container">
+        <div class="about-flex-layout">
+          <div class="about-text-column">
+            <span class="section-eyebrow">ABOUT KERNEL PRIME '26</span>
+            <h2 class="section-main-heading">Where Engineering Meets Futuristic Innovation</h2>
+            <p class="about-lead">
+              Kernel Prime '26 is the flagship national technology conference and 24-hour hackathon hosted by the 
+              <strong>Department of Electronics and Communication Engineering</strong> &amp; <strong>Department of Electronics Engineering (VLSI Design and Technology)</strong> 
+              at S.A. Engineering College, Chennai.
+            </p>
+            <p class="about-body">
+              Designed as a crucible for semiconductor innovation, embedded electronics, and artificial intelligence, Kernel Prime '26 challenges 
+              student teams to prototype real-world solutions under 24 hours with state-of-the-art lab tools, mentorship, and industrial evaluation.
+            </p>
+
+            <div class="about-highlights-list">
+              <div class="about-item">
+                <i data-lucide="check-circle-2"></i>
+                <span>Autonomous Institute Level Research Center Support</span>
+              </div>
+              <div class="about-item">
+                <i data-lucide="check-circle-2"></i>
+                <span>NAAC 'A' Grade &amp; ISO 9001:2015 Certified Facilities</span>
+              </div>
+              <div class="about-item">
+                <i data-lucide="check-circle-2"></i>
+                <span>28 Years of Academic &amp; Engineering Excellence</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-visual-column">
+            <div class="poster-preview-card glass-card tilt-card">
+              <img src="poster/WhatsApp Image 2026-08-31 at 10.47.33 AM.jpeg" alt="Kernel Prime '26 Poster Preview" />
+              <div class="card-overlay-badge">
+                <i data-lucide="sparkles"></i>
+                <span>Official Event Poster</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+       CHANGE 2 & 3: NEW PROBLEM STATEMENTS SECTION (REPLACES TRACKS)
+  ════════════════════════════════════════════════════════════════ -->
+    <section id="problems" class="section-padding">
+      <div class="container">
+        <div class="section-title-group">
+          <span class="section-eyebrow">CHALLENGE FORMAT</span>
+          <h2 class="section-main-heading">PROBLEM STATEMENTS</h2>
+          <p class="section-subtext">Real Challenges. Real Innovation.</p>
+        </div>
+
+        <div class="problems-grid">
+
+          <!-- Card 1: Hardware Problem Statements -->
+          <div class="problem-glass-card glass-card tilt-card">
+            <div class="problem-card-icon blue"><i data-lucide="cpu"></i></div>
+            <h3>Hardware Problem Statements</h3>
+            <p class="problem-desc">
+              Hardware problem statements will be officially released 2 days before the hackathon to encourage fresh thinking, fair competition, and innovative hardware solutions.
+            </p>
+            <div class="problem-pill-tag blue">Released 2 Days Before Event</div>
+          </div>
+
+          <!-- Card 2: On-Spot Innovation Challenges -->
+          <div class="problem-glass-card glass-card tilt-card">
+            <div class="problem-card-icon gold"><i data-lucide="zap"></i></div>
+            <h3>On-Spot Innovation Challenges</h3>
+            <p class="problem-desc">
+              Software and innovation challenges will be revealed during the event, encouraging rapid problem-solving, teamwork, and creative thinking under real hackathon conditions.
+            </p>
+            <div class="problem-pill-tag gold">Revealed On-Spot</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+       CHANGE 4: EVENT ROADMAP (REPLACES HOURLY TIMELINE)
+  ════════════════════════════════════════════════════════════════ -->
+    <section id="roadmap" class="section-padding">
+      <div class="container">
+        <div class="section-title-group">
+          <span class="section-eyebrow">EVENT ROADMAP</span>
+          <h2 class="section-main-heading">Your Journey to Kernel Prime '26</h2>
+          <p class="section-subtext">Key milestones leading up to the flagship national hackathon.</p>
+        </div>
+
+        <div class="roadmap-timeline-wrapper">
+          <div class="roadmap-line-track">
+            <div class="roadmap-progress-fill" id="roadmapProgressFill"></div>
+          </div>
+
+          <div class="roadmap-milestones-grid">
+
+            <div class="roadmap-node-card glass-card">
+              <div class="roadmap-node-icon"><i data-lucide="megaphone"></i></div>
+              <span class="roadmap-date-badge">&lt;&lt; Date &gt;&gt;</span>
+              <h4>📢 Registrations Open</h4>
+              <p>Official launch of team registrations across engineering colleges nationwide.</p>
+            </div>
+
+            <div class="roadmap-node-card glass-card">
+              <div class="roadmap-node-icon"><i data-lucide="users"></i></div>
+              <span class="roadmap-date-badge">&lt;&lt; Date &gt;&gt;</span>
+              <h4>Team Registration</h4>
+              <p>Teams register 2–4 members and select primary domain preferences.</p>
+            </div>
+
+            <div class="roadmap-node-card glass-card highlight-node">
+              <div class="roadmap-node-icon gold"><i data-lucide="cpu"></i></div>
+              <span class="roadmap-date-badge gold">October 6, 2026</span>
+              <h4>Problem Statement Announcement</h4>
+              <p>Hardware problem statements released 2 days before event for preparation.</p>
+            </div>
+
+            <div class="roadmap-node-card glass-card">
+              <div class="roadmap-node-icon"><i data-lucide="x-circle"></i></div>
+              <span class="roadmap-date-badge">&lt;&lt; Date &gt;&gt;</span>
+              <h4>Registration Closes</h4>
+              <p>Final deadline for team registration submissions and portal lockout.</p>
+            </div>
+
+            <div class="roadmap-node-card glass-card">
+              <div class="roadmap-node-icon"><i data-lucide="check-square"></i></div>
+              <span class="roadmap-date-badge">&lt;&lt; Date &gt;&gt;</span>
+              <h4>Participant Confirmation</h4>
+              <p>35 shortlisted teams receive final confirmation passes and lab guidelines.</p>
+            </div>
+
+            <div class="roadmap-node-card glass-card highlight-node">
+              <div class="roadmap-node-icon blue"><i data-lucide="flag"></i></div>
+              <span class="roadmap-date-badge blue">October 8, 2026</span>
+              <h4>Kernel Prime '26 Begins</h4>
+              <p>Inaugural ceremony, check-in, and official 24-hour hackathon launch.</p>
+            </div>
+
+            <div class="roadmap-node-card glass-card">
+              <div class="roadmap-node-icon"><i data-lucide="clock"></i></div>
+              <span class="roadmap-date-badge">October 8–9, 2026</span>
+              <h4>24-Hour Hackathon</h4>
+              <p>Non-stop prototyping, coding, soldering, and mentor evaluations.</p>
+            </div>
+
+            <div class="roadmap-node-card glass-card">
+              <div class="roadmap-node-icon"><i data-lucide="presentation"></i></div>
+              <span class="roadmap-date-badge">October 9, 2026</span>
+              <h4>Final Evaluation</h4>
+              <p>Live jury demonstrations, prototype testing, and score tallying.</p>
+            </div>
+
+            <div class="roadmap-node-card glass-card highlight-node">
+              <div class="roadmap-node-icon gold"><i data-lucide="trophy"></i></div>
+              <span class="roadmap-date-badge gold">October 9, 2026</span>
+              <h4>Prize Distribution</h4>
+              <p>Grand valedictory ceremony, trophy distribution, and prize awards.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+       CHANGE 5: PRIZE POOL (EXACT MATCH TO REFERENCE IMAGE)
+  ════════════════════════════════════════════════════════════════ -->
+    <section id="prizes" class="section-padding">
+      <div class="container">
+        
+        <!-- Header matching reference image -->
+        <div class="section-title-group">
+          <span class="prize-eyebrow-pill">TOTAL PRIZE POOL</span>
+          <div class="prize-main-amount-box">
+            <span class="prize-main-amount">₹50,000</span>
+          </div>
+          <div class="prize-subtitle-row">
+            <span class="sub-dot"></span>
+            <span class="sub-line"></span>
+            <p class="prize-subtext-heading">RECOGNIZING EXCELLENCE IN HARDWARE &amp; SOFTWARE INNOVATION</p>
+            <span class="sub-line"></span>
+            <span class="sub-dot"></span>
+          </div>
+        </div>
+
+        <!-- 4-Column Row Layout matching reference image -->
+        <div class="prize-reference-row">
+
+          <!-- 1. Hardware Runner-up (Left Outer Card) -->
+          <div class="prize-col-card runner-card tilt-card">
+            <div class="prize-badge-pill silver">2ND PLACE HARDWARE</div>
+            <div class="prize-circle-icon silver"><i data-lucide="award"></i></div>
+            <h3 class="prize-card-title">Hardware Runner-up</h3>
+            <div class="prize-card-amount silver">₹10,000</div>
+            <div class="prize-card-divider"></div>
+            <ul class="prize-card-checklist">
+              <li><i data-lucide="check"></i> ₹10,000 Cash Award</li>
+              <li><i data-lucide="check"></i> Runner-up Trophy &amp;<br/>Certificate</li>
+            </ul>
+          </div>
+
+          <!-- 2. Hardware Winner (Middle Left — Taller, Larger, Gold Glow) -->
+          <div class="prize-col-card winner-card featured-winner tilt-card">
+            <div class="prize-badge-pill gold">1ST PLACE HARDWARE</div>
+            <div class="prize-circle-icon gold sparkling"><i data-lucide="trophy"></i></div>
+            <h3 class="prize-card-title">Hardware Winner</h3>
+            <div class="prize-card-amount gold">₹15,000</div>
+            <div class="prize-card-divider gold"></div>
+            <ul class="prize-card-checklist">
+              <li><i data-lucide="check"></i> ₹15,000 Cash Award</li>
+              <li><i data-lucide="check"></i> Winner Trophy &amp;<br/>Certificate</li>
+            </ul>
+          </div>
+
+          <!-- 3. Software Winner (Middle Right — Taller, Larger, Gold Glow) -->
+          <div class="prize-col-card winner-card featured-winner tilt-card">
+            <div class="prize-badge-pill gold">1ST PLACE SOFTWARE</div>
+            <div class="prize-circle-icon gold sparkling"><i data-lucide="trophy"></i></div>
+            <h3 class="prize-card-title">Software Winner</h3>
+            <div class="prize-card-amount gold">₹15,000</div>
+            <div class="prize-card-divider gold"></div>
+            <ul class="prize-card-checklist">
+              <li><i data-lucide="check"></i> ₹15,000 Cash Award</li>
+              <li><i data-lucide="check"></i> Winner Trophy &amp;<br/>Certificate</li>
+            </ul>
+          </div>
+
+          <!-- 4. Software Runner-up (Right Outer Card) -->
+          <div class="prize-col-card runner-card tilt-card">
+            <div class="prize-badge-pill silver">2ND PLACE SOFTWARE</div>
+            <div class="prize-circle-icon silver"><i data-lucide="award"></i></div>
+            <h3 class="prize-card-title">Software Runner-up</h3>
+            <div class="prize-card-amount silver">₹10,000</div>
+            <div class="prize-card-divider"></div>
+            <ul class="prize-card-checklist">
+              <li><i data-lucide="check"></i> ₹10,000 Cash Award</li>
+              <li><i data-lucide="check"></i> Runner-up Trophy &amp;<br/>Certificate</li>
+            </ul>
+          </div>
+
+        </div><!-- /prize-reference-row -->
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+       JUDGES & MENTORS (TO BE ANNOUNCED TEASER SECTION)
+  ════════════════════════════════════════════════════════════════ -->
+    <section id="mentors" class="section-padding">
+      <div class="container">
+        <div class="section-title-group">
+          <span class="section-eyebrow">EXPERT EVALUATION PANEL</span>
+          <h2 class="section-main-heading">Judges &amp; Mentors</h2>
+          <p class="section-subtext">Distinguished professionals from leading semiconductor companies, AI research labs, and academic institutions.</p>
+        </div>
+
+        <div class="mentors-cards-grid">
+
+          <div class="mentor-profile-card glass-card tilt-card teaser-card">
+            <div class="mentor-avatar-box gold"><i data-lucide="cpu"></i></div>
+            <h3>VLSI &amp; Semiconductor Architects</h3>
+            <span class="mentor-designation-teaser">Leading Semiconductor Firms</span>
+            <p>Evaluated by senior ASIC/FPGA design leads and semiconductor architects specializing in low-power digital architecture and SoC verification.</p>
+            <div class="mentor-skill-chips">
+              <span>VLSI Design</span> <span>FPGA Acceleration</span> <span>ASIC / SoC</span>
+            </div>
+            <div class="teaser-status-badge">ANNOUNCING SOON</div>
+          </div>
+
+          <div class="mentor-profile-card glass-card tilt-card teaser-card">
+            <div class="mentor-avatar-box blue"><i data-lucide="brain"></i></div>
+            <h3>Embedded &amp; Edge AI Research Directors</h3>
+            <span class="mentor-designation-teaser">Research Labs &amp; Innovation Hubs</span>
+            <p>Guided by pioneering professors and lab directors specializing in IoT telemetry, edge machine learning, and autonomous robotics systems.</p>
+            <div class="mentor-skill-chips">
+              <span>Embedded AI</span> <span>IoT Systems</span> <span>Robotics</span>
+            </div>
+            <div class="teaser-status-badge">ANNOUNCING SOON</div>
+          </div>
+
+          <div class="mentor-profile-card glass-card tilt-card teaser-card">
+            <div class="mentor-avatar-box purple"><i data-lucide="code-2"></i></div>
+            <h3>Cloud Native &amp; Software Tech Leads</h3>
+            <span class="mentor-designation-teaser">Enterprise Tech Organizations</span>
+            <p>Reviewed by principal software engineers and cloud architects building high-concurrency distributed systems, AI pipelines, and cybersecurity protocols.</p>
+            <div class="mentor-skill-chips">
+              <span>Generative AI</span> <span>Cloud Native</span> <span>Cybersecurity</span>
+            </div>
+            <div class="teaser-status-badge">ANNOUNCING SOON</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+       SPONSORS & ORGANIZERS
+  ════════════════════════════════════════════════════════════════ -->
+    <section id="sponsors" class="section-padding">
+      <div class="container">
+        <div class="section-title-group">
+          <span class="section-eyebrow">INSTITUTIONAL PARTNERS</span>
+          <h2 class="section-main-heading">Organizers &amp; Accreditation</h2>
+        </div>
+
+        <div class="sponsors-showcase">
+          <div class="sponsor-tier-block">
+            <span class="tier-name">HOST INSTITUTION &amp; DEPARTMENTS</span>
+            <div class="sponsor-cards-flex">
+              <div class="sponsor-logo-box">
+                <img src="clg/SAEC LOGO.png" alt="S.A. Engineering College Logo" />
+                <span>S.A. Engineering College</span>
+              </div>
+              <div class="sponsor-logo-box">
+                <img src="logo/KernelPrime'26 Funky Logo.png" alt="Kernel Prime '26 Logo" />
+                <span>Dept. of ECE &amp; VLSI</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sponsor-tier-block">
+            <span class="tier-name">NATIONAL ACCREDITATION &amp; STANDARDS</span>
+            <div class="sponsor-cards-flex">
+              <div class="accred-logo-card">
+                <img src="clg/naac.png" alt="NAAC A Grade Logo" />
+                <span>NAAC 'A' Grade</span>
+              </div>
+              <div class="accred-logo-card">
+                <img src="clg/28.png" alt="28 Years Excellence Logo" />
+                <span>28 Years Excellence</span>
+              </div>
+              <div class="accred-logo-card">
+                <img src="clg/nba.png" alt="NBA Accredited Logo" />
+                <span>NBA Accredited</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+       FAQ ACCORDION
+  ════════════════════════════════════════════════════════════════ -->
+    <section id="faq" class="section-padding">
+      <div class="container">
+        <div class="section-title-group">
+          <span class="section-eyebrow">QUESTIONS?</span>
+          <h2 class="section-main-heading">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-accordion-list">
+
+          <div class="faq-item glass-card">
+            <button class="faq-toggle-btn">
+              <span>Who is eligible to participate in Kernel Prime '26?</span>
+              <i data-lucide="chevron-down" class="faq-arrow-icon"></i>
+            </button>
+            <div class="faq-content-body">
+              <p>Undergraduate (B.E. / B.Tech) and Postgraduate (M.E. / M.Tech) students from all recognized engineering colleges across India are eligible.</p>
+            </div>
+          </div>
+
+          <div class="faq-item glass-card">
+            <button class="faq-toggle-btn">
+              <span>What is the team size allowed?</span>
+              <i data-lucide="chevron-down" class="faq-arrow-icon"></i>
+            </button>
+            <div class="faq-content-body">
+              <p>Teams can consist of 2 to 4 members. Interdisciplinary teams (combining ECE, CSE, VLSI, IT, Mechanical, etc.) are highly encouraged.</p>
+            </div>
+          </div>
+
+          <div class="faq-item glass-card">
+            <button class="faq-toggle-btn">
+              <span>Will hardware components and lab tools be provided?</span>
+              <i data-lucide="chevron-down" class="faq-arrow-icon"></i>
+            </button>
+            <div class="faq-content-body">
+              <p>Oscilloscopes, soldering stations, power supplies, and high-speed Wi-Fi will be provided in our college labs. Teams must bring their specific microcontrollers, sensors, and laptops.</p>
+            </div>
+          </div>
+
+          <div class="faq-item glass-card">
+            <button class="faq-toggle-btn">
+              <span>Is accommodation and food provided?</span>
+              <i data-lucide="chevron-down" class="faq-arrow-icon"></i>
+            </button>
+            <div class="faq-content-body">
+              <p>Yes! Dedicated resting halls, continuous campus security, full meals, and midnight energy refreshments are provided free of cost for all participants.</p>
+            </div>
+          </div>
+
+          <div class="faq-item glass-card">
+            <button class="faq-toggle-btn">
+              <span>When will problem statements be revealed?</span>
+              <i data-lucide="chevron-down" class="faq-arrow-icon"></i>
+            </button>
+            <div class="faq-content-body">
+              <p>Hardware problem statements will be officially released 2 days before the event (October 6, 2026). Software and innovation challenges will be revealed on-spot during the inaugural ceremony.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+       REGISTER CTA & VENUE CONTACT
+  ════════════════════════════════════════════════════════════════ -->
+    <section id="register" class="section-padding">
+      <div class="container">
+        <div class="register-banner-glass">
+          <span class="banner-pill">REGISTRATION IS OPEN</span>
+          <h2>Register Your Team for Kernel Prime '26</h2>
+          <p>Join India's premier engineering minds in Chennai for 24 hours of non-stop innovation, cash prizes, and national recognition.</p>
+          
+          <div class="banner-action-group">
+            <a href="https://forms.gle/sample" target="_blank" rel="noopener" class="btn-hero-primary lg-btn">
+              <span>Complete Team Registration</span>
+              <i data-lucide="external-link"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section-padding">
+      <div class="container">
+        <div class="section-title-group">
+          <span class="section-eyebrow">LOCATION &amp; CONTACT</span>
+          <h2 class="section-main-heading">Venue &amp; Coordinators</h2>
+        </div>
+
+        <div class="contact-cards-grid">
+
+          <div class="contact-box glass-card">
+            <div class="contact-box-icon"><i data-lucide="building-2"></i></div>
+            <h3>Venue Address</h3>
+            <p class="contact-bold">S.A. Engineering College (Autonomous)</p>
+            <p class="contact-muted">Poonamallee - Avadi Road, Veeraraghavapuram, Thiruverkadu, Chennai, Tamil Nadu 600077</p>
+          </div>
+
+          <div class="contact-box glass-card">
+            <div class="contact-box-icon"><i data-lucide="phone"></i></div>
+            <h3>Faculty Coordinators</h3>
+            <p class="contact-bold">Dept. of ECE: +91 98400 00000</p>
+            <p class="contact-bold">Dept. of VLSI: +91 98411 11111</p>
+            <p class="contact-muted">Email: <a href="mailto:kernalprime@saec.ac.in">kernalprime@saec.ac.in</a></p>
+          </div>
+
+          <div class="contact-box glass-card">
+            <div class="contact-box-icon"><i data-lucide="users"></i></div>
+            <h3>Student Leads</h3>
+            <p class="contact-bold">Lead Coordinator: +91 91234 56789</p>
+            <p class="contact-bold">Technical Lead: +91 98765 43210</p>
+            <p class="contact-muted">Available 24/7 on Call / WhatsApp</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════════════════════ -->
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-grid">
+          
+          <div class="footer-brand-col">
+            <div class="footer-logo-row">
+              <img src="logo/KernelPrime'26 Funky Logo.png" alt="Kernel Prime '26" />
+            </div>
+            <p class="footer-desc">
+              National 24-Hour Hackathon &amp; Flagship Technology Conference hosted by 
+              Department of ECE &amp; Department of VLSI Design and Technology, S.A. Engineering College, Chennai.
+            </p>
+          </div>
+
+          <div class="footer-links-col">
+            <h4>Event Links</h4>
+            <a href="#about">About</a>
+            <a href="#glance">Highlights</a>
+            <a href="#problems">Problem Statements</a>
+            <a href="#roadmap">Event Roadmap</a>
+            <a href="#prizes">Prize Pool</a>
+          </div>
+
+          <div class="footer-links-col">
+            <h4>Institution</h4>
+            <a href="https://saec.ac.in" target="_blank" rel="noopener">S.A. Engineering College</a>
+            <a href="#about">Dept of ECE</a>
+            <a href="#about">Dept of VLSI Design</a>
+            <a href="#contact">Venue Map</a>
+          </div>
+
+          <div class="footer-accred-col">
+            <h4>Accreditation</h4>
+            <div class="footer-accred-logos">
+              <img src="clg/naac.png" alt="NAAC A Grade" />
+              <img src="clg/28.png" alt="28 Years Excellence" />
+              <img src="clg/nba.png" alt="NBA Accredited" />
+            </div>
+          </div>
+
+        </div>
+
+        <div class="footer-bottom-bar">
+          <p>&copy; 2026 Kernel Prime '26. All rights reserved. S.A. Engineering College, Chennai.</p>
+          <div class="footer-social-icons">
+            <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+            <a href="#" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+            <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+  </div><!-- /mainSite -->
+
+  <!-- BROCHURE MODAL -->
+  <div id="brochureModal" class="modal-backdrop-view">
+    <div class="modal-card-box glass-card">
+      <button class="modal-close-btn" id="closeModalBtn">&times;</button>
+      <div class="modal-card-header">
+        <i data-lucide="file-text" class="modal-header-icon"></i>
+        <h3>Kernel Prime '26 Official Poster &amp; Brochure</h3>
+      </div>
+      <div class="modal-card-body">
+        <p>Download the high-resolution event poster &amp; brochure containing problem guidelines, rules, and venue roadmap.</p>
+        <div class="brochure-image-holder">
+          <img src="poster/WhatsApp Image 2026-08-31 at 10.47.33 AM.jpeg" alt="Kernel Prime '26 Brochure Poster" />
+        </div>
+        <div class="modal-action-row">
+          <a href="poster/WhatsApp Image 2026-08-31 at 10.47.33 AM.jpeg" download="Kernel_Prime_26_Brochure.jpg" class="btn-hero-primary">
+            <span>Download High-Res Poster/Brochure</span>
+            <i data-lucide="download"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
