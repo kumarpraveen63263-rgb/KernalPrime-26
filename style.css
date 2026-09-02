@@ -820,6 +820,11 @@ body.splash-active {
   margin-bottom: 0.3rem;
 }
 
+.highlight-gold-text {
+  color: var(--clr-gold) !important;
+  text-shadow: 0 0 15px rgba(245, 197, 24, 0.4);
+}
+
 .glance-card h3 {
   font-family: var(--font-heading);
   font-size: 1.1rem;
