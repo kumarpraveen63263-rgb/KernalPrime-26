@@ -1523,7 +1523,115 @@ body.splash-active {
   padding: 0 1.8rem 1.5rem;
 }
 
-/* ── 14. REGISTER CTA & CONTACT ─────────────────────────────────── */
+/* ── 14. ELIGIBILITY CRITERIA SECTION ───────────────────────────── */
+.eligibility-card-box {
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 3rem 2.8rem;
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(20px);
+  position: relative;
+  box-shadow: 0 0 45px rgba(0, 240, 255, 0.15), 0 0 30px rgba(245, 197, 24, 0.12), inset 0 0 25px rgba(0, 240, 255, 0.04);
+  transition: all var(--transition-smooth);
+}
+
+.eligibility-card-box:hover {
+  transform: translateY(-6px);
+  border-color: rgba(245, 197, 24, 0.5);
+  box-shadow: 0 0 60px rgba(0, 240, 255, 0.22), 0 0 40px rgba(245, 197, 24, 0.25), 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.eligibility-top-badge {
+  position: absolute;
+  top: 1.4rem;
+  right: 1.6rem;
+}
+
+.eligibility-pill {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  color: var(--clr-blue);
+  background: rgba(0, 240, 255, 0.1);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+}
+
+.eligibility-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1.8rem;
+}
+
+.eligibility-icon-glow {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: rgba(0, 240, 255, 0.12);
+  border: 2px solid var(--clr-blue);
+  color: var(--clr-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.35);
+  flex-shrink: 0;
+  animation: shieldPulse 3s infinite ease-in-out;
+}
+
+@keyframes shieldPulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 25px rgba(0, 240, 255, 0.35); }
+  50% { transform: scale(1.06); box-shadow: 0 0 35px rgba(0, 240, 255, 0.6), 0 0 20px rgba(245, 197, 24, 0.4); }
+}
+
+.eligibility-icon-glow svg {
+  width: 28px;
+  height: 28px;
+}
+
+.eligibility-card-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 3.2vw, 1.8rem);
+  font-weight: 800;
+  color: var(--clr-white);
+  letter-spacing: 0.5px;
+}
+
+.eligibility-content-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.eligibility-content-body p {
+  font-size: 1.05rem;
+  color: var(--clr-text-sub);
+  line-height: 1.7;
+  position: relative;
+  padding-left: 1.6rem;
+}
+
+.eligibility-content-body p::before {
+  content: "•";
+  position: absolute;
+  left: 0.2rem;
+  top: -0.1rem;
+  color: var(--clr-blue);
+  font-size: 1.4rem;
+}
+
+.highlight-cyan-text {
+  color: var(--clr-blue) !important;
+  font-weight: 700;
+  text-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+}
+
+/* ── 15. REGISTER CTA & CONTACT ─────────────────────────────────── */
 .register-banner-glass {
   padding: 4rem 2.5rem;
   background: radial-gradient(ellipse at top, rgba(0, 240, 255, 0.18) 0%, rgba(10, 16, 30, 0.88) 70%);
@@ -1665,9 +1773,9 @@ body.splash-active {
 /* ── 15. MEET THE CORE TEAM SECTION ─────────────────────────────── */
 .team-cards-grid-3col {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  max-width: 1080px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.8rem;
+  max-width: 1280px;
   margin: 0 auto;
   justify-content: center;
 }
@@ -1722,6 +1830,9 @@ body.splash-active {
 }
 .team-member-img.pos-pradeep {
   object-position: center 32%;
+}
+.team-member-img.pos-nith {
+  object-position: center 25%;
 }
 
 .team-role-badge {
@@ -2153,6 +2264,23 @@ body.nav-open {
   }
 
   /* Standalone Venue & Maps */
+  .eligibility-card-box {
+    padding: 2.2rem 1.4rem 1.8rem;
+  }
+  .eligibility-top-badge {
+    position: static;
+    margin-bottom: 1.2rem;
+  }
+  .eligibility-card-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.8rem;
+  }
+  .eligibility-content-body p {
+    font-size: 0.95rem;
+    padding-left: 1.2rem;
+  }
+
   .venue-standalone-card {
     padding: 1.2rem 0.9rem;
   }
