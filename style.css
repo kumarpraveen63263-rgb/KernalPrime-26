@@ -1631,6 +1631,97 @@ body.splash-active {
   text-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
 }
 
+/* ── 14.5. SELECTION PROCESS SECTION ─────────────────────────────── */
+.process-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  max-width: 1350px;
+  margin: 0 auto;
+}
+
+.process-step-card {
+  padding: 2rem 1.4rem;
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(16px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  transition: all var(--transition-smooth);
+}
+.process-step-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--clr-blue);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 240, 255, 0.25);
+}
+
+.step-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1.2rem;
+}
+
+.step-number {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.15);
+  line-height: 1;
+}
+.process-step-card:hover .step-number {
+  color: var(--clr-blue);
+  text-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+}
+
+.step-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.step-icon-box.blue { background: rgba(0, 240, 255, 0.12); color: var(--clr-blue); border: 1px solid rgba(0, 240, 255, 0.3); }
+.step-icon-box.cyan { background: rgba(0, 240, 255, 0.12); color: var(--clr-blue); border: 1px solid rgba(0, 240, 255, 0.3); }
+.step-icon-box.purple { background: rgba(123, 47, 247, 0.12); color: var(--clr-purple); border: 1px solid rgba(123, 47, 247, 0.3); }
+.step-icon-box.gold { background: rgba(245, 197, 24, 0.12); color: var(--clr-gold); border: 1px solid rgba(245, 197, 24, 0.3); }
+.step-icon-box svg { width: 22px; height: 22px; }
+
+.step-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--clr-white);
+  margin-bottom: 0.5rem;
+}
+
+.step-tag-pill {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  margin-bottom: 0.8rem;
+  display: inline-block;
+}
+.step-tag-pill.free-pill { color: #00f0ff; background: rgba(0, 240, 255, 0.1); border: 1px solid rgba(0, 240, 255, 0.3); }
+.step-tag-pill.cyan-pill { color: #00f0ff; background: rgba(0, 240, 255, 0.1); border: 1px solid rgba(0, 240, 255, 0.3); }
+.step-tag-pill.purple-pill { color: #b184ff; background: rgba(123, 47, 247, 0.12); border: 1px solid rgba(123, 47, 247, 0.3); }
+.step-tag-pill.gold-pill { color: #F4B400; background: rgba(245, 197, 24, 0.12); border: 1px solid rgba(245, 197, 24, 0.3); box-shadow: 0 0 12px rgba(245, 197, 24, 0.25); }
+.step-tag-pill.blue-pill { color: #00f0ff; background: rgba(0, 240, 255, 0.1); border: 1px solid rgba(0, 240, 255, 0.3); }
+
+.step-card-text {
+  font-size: 0.88rem;
+  color: var(--clr-text-muted);
+  line-height: 1.5;
+}
+
 /* ── 15. REGISTER CTA & CONTACT ─────────────────────────────────── */
 .register-banner-glass {
   padding: 4rem 2.5rem;
@@ -2281,7 +2372,8 @@ body.nav-open {
 
   /* Card Grids Calibration */
   .glance-cards-grid,
-  .problem-cards-grid {
+  .problem-cards-grid,
+  .process-steps-grid {
     grid-template-columns: 1fr;
     gap: 1.2rem;
   }
