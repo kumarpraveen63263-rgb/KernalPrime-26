@@ -1772,16 +1772,18 @@ body.splash-active {
 
 /* ── 15. MEET THE CORE TEAM SECTION ─────────────────────────────── */
 .team-cards-grid-3col {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 1.8rem;
-  max-width: 1400px;
-  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 1.5rem;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .team-member-card {
-  padding: 2.5rem 1.8rem 2.2rem;
+  flex: 0 1 240px;
+  width: 240px;
+  padding: 2.2rem 1.4rem 2rem;
   background: var(--bg-card);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg);
@@ -2260,10 +2262,19 @@ body.nav-open {
 
   /* Card Grids Calibration */
   .glance-cards-grid,
-  .problem-cards-grid,
-  .team-cards-grid-3col {
+  .problem-cards-grid {
     grid-template-columns: 1fr;
     gap: 1.2rem;
+  }
+  .team-cards-grid-3col {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  .team-member-card {
+    flex: 0 1 100%;
+    max-width: 320px;
+    width: 100%;
   }
 
   /* Standalone Venue & Maps */
