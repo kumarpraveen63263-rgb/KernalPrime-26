@@ -1771,13 +1771,32 @@ body.splash-active {
 }
 
 /* ── 15. MEET THE CORE TEAM SECTION ─────────────────────────────── */
-.team-cards-grid-3col {
+.team-two-tier-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.2rem;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.team-tier-row {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5rem;
-  max-width: 1440px;
-  margin: 0 auto;
+  gap: 2rem;
+  width: 100%;
+}
+
+.team-tier-row.top-tier .team-member-card {
+  flex: 0 1 270px;
+  width: 270px;
+}
+
+.team-tier-row.bottom-tier .team-member-card {
+  flex: 0 1 260px;
+  width: 260px;
 }
 
 .team-member-card {
@@ -2266,11 +2285,14 @@ body.nav-open {
     grid-template-columns: 1fr;
     gap: 1.2rem;
   }
-  .team-cards-grid-3col {
+  .team-two-tier-layout,
+  .team-tier-row {
     flex-direction: column;
     align-items: center;
     gap: 1.2rem;
   }
+  .team-tier-row.top-tier .team-member-card,
+  .team-tier-row.bottom-tier .team-member-card,
   .team-member-card {
     flex: 0 1 100%;
     max-width: 320px;
